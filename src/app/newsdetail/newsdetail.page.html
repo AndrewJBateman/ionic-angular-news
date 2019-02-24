@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ newsService.newsItem.source.name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+<ion-card class="card-background-page">
+  <img [src]="newsService.newsItem.urlToImage"/>
+  <div class="card-title">{{ newsService.newsItem.title }}</div>
+  <div class="card-subtitle">{{ newsService.newsItem.url }}</div>
+</ion-card>
+
+</ion-content>
