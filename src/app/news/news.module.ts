@@ -8,19 +8,19 @@ import { IonicModule } from '@ionic/angular';
 import { NewsPage } from './news.page';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: NewsPage
-  }
+	{
+		path: '',
+		component: NewsPage
+	}
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    RouterModule.forChild(routes)
-  ],
-  declarations: [NewsPage]
+	imports: [
+		CommonModule,
+		FormsModule,
+		IonicModule,
+		RouterModule.forChild(routes)
+	],
+	declarations: [NewsPage]
 })
 export class NewsPageModule {}

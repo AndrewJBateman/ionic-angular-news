@@ -3,31 +3,57 @@ import { NewsService } from '../services/news.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-news',
-  templateUrl: './news.page.html',
-  styleUrls: ['./news.page.scss'],
+	selector: 'app-news',
+	templateUrl: './news.page.html',
+	styleUrls: ['./news.page.scss'],
 })
 export class NewsPage implements OnInit {
-  news: any;
-  constructor(private newsService: NewsService, private router: Router) { }
+	data: any;
+	page = 1;
+	// constructor is called before the ngOnInit(), to set up dependency injection..
+	constructor(private newsService: NewsService, private router: Router) { }
 
-  ngOnInit() {
+	ngOnInit() {
+		this.newsService
+			.getData(
+        `top-headlines?country=us&category=business&pageSize=5&page=${
+          this.page
+        }`
+      )
+			.subscribe(data => {
+					console.log(data);
+					this.data = data;
+				},
+				(err) => {
+					console.log('The error is: ', err);
+				}
+
+		);
+	}
+
+	onGoToNewsDetail(article) {
+		this.newsService.currentArticle = article;
+		this.router.navigate(['/newsdetail']);
+	}
+
+	loadMoreNews(event) {
+    this.page++;
+    console.log(event);
     this.newsService
-      .getNews('everything?q=bitcoin')
-      .subscribe(
-        (res) => {
-          this.news = res;
-        },
-        (err) => {
-          console.log('The error is :', err)
+      .getData(
+        `top-headlines?country=us&category=business&pageSize=5&page=${
+          this.page
+        }`
+      )
+      .subscribe(data => {
+        // console.log(data);
+        // this.data = data;
+        for (const article of data['articles']) {
+          this.data.articles.push(article);
         }
-
-    )
-  }
-
-  itemSelected(news) {
-    this.newsService.newsItem = news;
-    this.router.navigate(['/newsdetail']);
+        event.target.complete();
+        console.log(this.data);
+      });
   }
 
 }
