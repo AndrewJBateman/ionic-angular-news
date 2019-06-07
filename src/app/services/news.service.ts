@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import {environment} from '../../environments/environment';
+	import {environment} from '../../environments/environment';
 
-const API_URL = environment.API_URL;
-const API_KEY = environment.API_KEY;
+const apiUrl = environment.API_URL;
+const apiKey = environment.API_KEY;
 
 @Injectable({
 	providedIn: 'root'
@@ -16,6 +16,6 @@ export class NewsService {
 	constructor(private http: HttpClient) {}
 
 	getData(url) {
-		return this.http.get(`${API_URL}/${url}&apiKey=${API_KEY}`);
+		return this.http.get(`${apiUrl}/${url}&apiKey=${apiKey}`);
 	}
 }

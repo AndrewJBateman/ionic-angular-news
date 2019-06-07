@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 	styleUrls: ['./news.page.scss'],
 })
 export class NewsPage implements OnInit {
-	data: any;
+	articles: any;
 	page = 1;
 	// constructor is called before the ngOnInit(), to set up dependency injection..
 	constructor(private newsService: NewsService, private router: Router) { }
@@ -16,10 +16,10 @@ export class NewsPage implements OnInit {
 	ngOnInit() {
 		this.newsService
 			.getData(
-        `top-headlines?country=us&category=business&pageSize=5&page=${
-          this.page
-        }`
-      )
+				`top-headlines?country=us&category=business&pageSize=5&page=${
+					this.page
+				}`
+			)
 			.subscribe(data => {
 					console.log(data);
 					this.data = data;
@@ -37,23 +37,23 @@ export class NewsPage implements OnInit {
 	}
 
 	loadMoreNews(event) {
-    this.page++;
-    console.log(event);
-    this.newsService
-      .getData(
-        `top-headlines?country=us&category=business&pageSize=5&page=${
-          this.page
-        }`
-      )
-      .subscribe(data => {
-        // console.log(data);
-        // this.data = data;
-        for (const article of data['articles']) {
-          this.data.articles.push(article);
-        }
-        event.target.complete();
-        console.log(this.data);
-      });
-  }
+		this.page++;
+		console.log(event);
+		this.newsService
+			.getData(
+				`top-headlines?country=us&category=business&pageSize=5&page=${
+					this.page
+				}`
+			)
+			.subscribe(data => {
+				// console.log(data);
+				// this.data = data;
+				for (const article of data['articles']) {
+					this.data.articles.push(article);
+				}
+				event.target.complete();
+				console.log(this.data);
+			});
+	}
 
 }

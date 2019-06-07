@@ -1,6 +1,6 @@
-# Ionic Todo App
+# Ionic Angular News
 
-App to search for and display news items from an [API](https://newsapi.org/) using the [Ionic 4 framework](https://ionicframework.com/docs).
+App to search for and display news items from an [API](https://newsapi.org/) using the [Ionic 5 framework](https://ionicframework.com/docs).
 
 ## Table of contents
 
@@ -22,7 +22,9 @@ App to search for and display news items from an [API](https://newsapi.org/) usi
 
 ## Technologies
 
-* Ionic/angular - version 4.0.0
+* [Ionic v5.7.0](https://ionicframework.com/)
+
+* [Ionic/angular v4.4.2](https://www.npmjs.com/package/@ionic/angular)
 
 ## Setup
 
@@ -30,7 +32,7 @@ App to search for and display news items from an [API](https://newsapi.org/) usi
 
 ## Code Examples
 
-*
+* Example 1
 
 ## Features
 
@@ -38,9 +40,9 @@ App to search for and display news items from an [API](https://newsapi.org/) usi
 
 ## Status & To-do list
 
-* Status: working basic API news app.
+* Status: Not working. Compiles but code incomplete.
 
-* To-do: Add a lot more detail/styling to front page.
+* To-do: Fix code. Change tabs to new system. Add a lot more detail/styling to front page.
 
 ## Inspiration
 
@@ -48,4 +50,4 @@ Project inspired by [Baljeet Singh´s Youtube video 'Creating News Application W
 
 ## Contact
 
-Created by [ABateman](https://www.andrewbateman.org) - feel free to contact me!
+Repo created by [ABateman](https://www.andrewbateman.org) - feel free to contact me!
