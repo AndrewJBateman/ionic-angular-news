@@ -7,11 +7,25 @@
 <ion-content>
   <ion-card>
     <ion-img [src]="article.urlToImage"></ion-img>
+    <ion-card-header>
+      <ion-card-title>{{article.title}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-header>
+      <ion-card-title>Brief Description</ion-card-title>
+    </ion-card-header>
 
     <ion-card-content>
-      <ion-card-title>{{article.title}}</ion-card-title>
-
       <p>{{article.description}}</p>
     </ion-card-content>
+    
+    <ion-card-header>
+      <ion-card-title>Detailed Description</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <p>{{article.content}}</p>
+    </ion-card-content>
+
   </ion-card>
 </ion-content>

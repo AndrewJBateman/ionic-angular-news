@@ -40,9 +40,9 @@ App to search for and display news items from an [API](https://newsapi.org/) usi
 
 ## Status & To-do list
 
-* Status: Not working. Compiles but code incomplete.
+* Status: Part Working. Compiles & News page loads, clicking on article does not lead to the news detail page. Footer are horizontal and not visible.
 
-* To-do: Fix code. Change tabs to new system. Add a lot more detail/styling to front page.
+* To-do: Fix code. Change tabs to new system. Add more detail/styling to front page.
 
 ## Inspiration
 

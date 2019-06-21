@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { TabsPage } from './tabs.page';
 // import { AboutPage } from '../about/about.page';
-import { ContactPage } from '../contact/contact.page';
-import { NewsPage } from '../news/news.page';
+// import { ContactPage } from '../contact/contact.page';
+// import { NewsPage } from '../news/news.page';
 
 const routes: Routes = [
 	{
@@ -13,24 +13,41 @@ const routes: Routes = [
 		children: [
 			{
 				path: 'news',
-				outlet: 'news',
-				component: NewsPage
+				children: [
+					{
+						path: '',
+						loadChildren: '../news/news.module#NewsPageModule'
+					}
+				]
 			},
-/*       {
-        path: 'about',
-        outlet: 'about',
-        component: AboutPage
-      }, */
 			{
 				path: 'contact',
-				outlet: 'contact',
-				component: ContactPage
+				children: [
+					{
+						path: '',
+						loadChildren: '../contact/contact.module#ContactPageModule'
+					}
+				]
+			},
+/* 			{
+				path: 'about',
+				children: [
+					{
+						path: '',
+						loadChildren: '../about/about.module#AboutPageModule'
+					}
+				]
+			}, */
+			{
+				path: '',
+				redirectTo: '/tabs/news',
+				pathMatch: 'full'
 			}
 		]
 	},
 	{
 		path: '',
-		redirectTo: '/tabs/(news:news)',
+		redirectTo: '/tabs/news',
 		pathMatch: 'full'
 	}
 ];
