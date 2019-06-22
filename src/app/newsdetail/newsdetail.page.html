@@ -1,31 +1,29 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>{{article.title}}</ion-title>
+  <ion-toolbar color="primary">
+    <!-- <ion-title>{{article.title}}</ion-title> -->
+		<ion-title>NEWS IN DETAIL</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card>
     <ion-img [src]="article.urlToImage"></ion-img>
-    <ion-card-header>
-      <ion-card-title>{{article.title}}</ion-card-title>
-    </ion-card-header>
   
-    <ion-card-header>
-      <ion-card-title>Brief Description</ion-card-title>
-    </ion-card-header>
+    <ion-card-content>
+			<ion-title>{{article.title}}</ion-title>
+    </ion-card-content>
 
     <ion-card-content>
+			
+			<ion-icon name="clipboard" slot="start"></ion-icon><p>By: {{article.author}}</p>
+			<p><ion-icon name="calendar" slot="start"></ion-icon>Published: {{article.publishedAt}}</p>
       <p>{{article.description}}</p>
     </ion-card-content>
-    
-    <ion-card-header>
-      <ion-card-title>Detailed Description</ion-card-title>
-    </ion-card-header>
-  
+
     <ion-card-content>
-      <p>{{article.content}}</p>
+      <p>Additional info: {{article.content}}</p>
     </ion-card-content>
 
   </ion-card>
 </ion-content>
+

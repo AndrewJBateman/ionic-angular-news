@@ -7,12 +7,11 @@ import { NewsService } from '../services/news.service';
 	styleUrls: ['./newsdetail.page.scss'],
 })
 export class NewsDetailPage implements OnInit {
-	article;
+	article: any;
 	constructor(private newsService: NewsService) { }
 
 	ngOnInit() {
 		this.article = this.newsService.currentArticle;
-		console.log(this.newsService.currentArticle);
 	}
 
 }

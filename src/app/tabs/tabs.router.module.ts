@@ -1,10 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 import { TabsPage } from './tabs.page';
-// import { AboutPage } from '../about/about.page';
-// import { ContactPage } from '../contact/contact.page';
-// import { NewsPage } from '../news/news.page';
 
 const routes: Routes = [
 	{
@@ -29,7 +25,7 @@ const routes: Routes = [
 					}
 				]
 			},
-/* 			{
+ 			{
 				path: 'about',
 				children: [
 					{
@@ -37,7 +33,16 @@ const routes: Routes = [
 						loadChildren: '../about/about.module#AboutPageModule'
 					}
 				]
-			}, */
+			},
+			{
+				path: 'newsdetail',
+				children: [
+					{
+						path: '',
+						loadChildren: '../newsdetail/newsdetail.module#NewsDetailPageModule'
+					}
+				]
+			},
 			{
 				path: '',
 				redirectTo: '/tabs/news',

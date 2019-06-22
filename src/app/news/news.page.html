@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>News</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title text-center>WORLD NEWS HEADLINES</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -46,26 +46,6 @@
   </ion-card>
 
   <ion-card *ngFor="let article of data4?.articles" (click)="onGoToNewsDetail(article)">
-    <ion-img [src]="article.urlToImage" (click)="onGoToNewsDetail(article)"></ion-img>
-    <ion-card-header>
-      <ion-card-title>{{article.title}}</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p>{{article.description}}</p>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card *ngFor="let article of data5?.articles" (click)="onGoToNewsDetail(article)">
-    <ion-img [src]="article.urlToImage" (click)="onGoToNewsDetail(article)"></ion-img>
-    <ion-card-header>
-      <ion-card-title>{{article.title}}</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p>{{article.description}}</p>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card *ngFor="let article of data6?.articles" (click)="onGoToNewsDetail(article)">
     <ion-img [src]="article.urlToImage" (click)="onGoToNewsDetail(article)"></ion-img>
     <ion-card-header>
       <ion-card-title>{{article.title}}</ion-card-title>

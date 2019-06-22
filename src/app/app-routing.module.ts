@@ -3,7 +3,7 @@ import { PreloadAllModules, Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
 	{ path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
-	{ path: 'news', loadChildren: './news/news.module#NewsPageModule' }
+	{ path: 'newsdetail', loadChildren: './newsdetail/newsdetail.module#NewsDetailPageModule' }
 ];
 
 @NgModule({
@@ -12,4 +12,6 @@ const routes: Routes = [
 	],
 	exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+
+}
