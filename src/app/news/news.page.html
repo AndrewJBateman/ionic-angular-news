@@ -7,15 +7,10 @@
 <ion-content >
   <ion-card *ngFor="let article of data?.articles" (click)="onGoToNewsDetail(article)">
     <ion-img [src]="article.urlToImage" (click)="onGoToNewsDetail(article)"></ion-img>
-    <ion-card-header>
-      <ion-card-title>{{article.title}}</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p>{{article.description}}</p>
-    </ion-card-content>
+    <ion-card-title text-wrap style="font-size: 1rem; color: #456f54;">{{article.title}}</ion-card-title>
   </ion-card>
 
-	<ion-card *ngFor="let article of data1?.articles" (click)="onGoToNewsDetail(article)">
+	<!-- <ion-card *ngFor="let article of data1?.articles" (click)="onGoToNewsDetail(article)">
     <ion-img [src]="article.urlToImage" (click)="onGoToNewsDetail(article)"></ion-img>
     <ion-card-header>
       <ion-card-title>{{article.title}}</ion-card-title>
@@ -53,6 +48,6 @@
     <ion-card-content>
       <p>{{article.description}}</p>
     </ion-card-content>
-  </ion-card>
+  </ion-card> -->
 
 </ion-content>

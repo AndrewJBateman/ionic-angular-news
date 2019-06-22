@@ -1,6 +1,6 @@
 {
   "name": "ionic-angular-news",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
@@ -56,5 +56,5 @@
     "tslint": "~5.17.0",
     "typescript": "3.4.1"
   },
-  "description": "App to search for and display news items from an API using Ionic 4"
+  "description": "App to search for and display news items from an API using Ionic 5"
 }

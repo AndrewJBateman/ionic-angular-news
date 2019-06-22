@@ -5,25 +5,27 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-card>
+<ion-content padding>
+	
+	<ion-card>
     <ion-img [src]="article.urlToImage"></ion-img>
   
-    <ion-card-content>
-			<ion-title>{{article.title}}</ion-title>
-    </ion-card-content>
-
-    <ion-card-content>
-			
-			<ion-icon name="clipboard" slot="start"></ion-icon><p>By: {{article.author}}</p>
-			<p><ion-icon name="calendar" slot="start"></ion-icon>Published: {{article.publishedAt}}</p>
+		<ion-card-content>
+  		<ion-list>
+    		<ion-item>
+      		<ion-icon name="clipboard" slot="start"></ion-icon>
+      		Author: {{article.author}} of {{article.source.name}}
+    		</ion-item>
+				<ion-item>
+					<ion-icon name="calendar" slot="start"></ion-icon>
+					Published: {{article.publishedAt}}
+				</ion-item>
+  		</ion-list>
+			<hr>
       <p>{{article.description}}</p>
-    </ion-card-content>
 
-    <ion-card-content>
-      <p>Additional info: {{article.content}}</p>
-    </ion-card-content>
-
-  </ion-card>
+      <p>{{article.content}}</p>
+	  </ion-card-content>
+	</ion-card>
 </ion-content>
 
