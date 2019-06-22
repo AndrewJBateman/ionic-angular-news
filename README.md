@@ -1,6 +1,6 @@
 # Ionic Angular News
 
-Ionic 5 app to search for and display news items from an [API](https://newsapi.org/) using the [Ionic 5 framework](https://ionicframework.com/docs).
+App to search for and display news items from a [news API](https://newsapi.org/) using the [Ionic 5 framework](https://ionicframework.com/docs).
 
 ## Table of contents
 
@@ -26,7 +26,7 @@ Ionic 5 app to search for and display news items from an [API](https://newsapi.o
 ## Screenshots
 
 ![Ionic page](./img/news-page.png)
-![Ionic page](./img/newsdetail.png)
+![Ionic page](./img/news-detail.png)
 ![Ionic page](./img/contact.png)
 ![Ionic page](./img/about.png)
 
@@ -44,7 +44,7 @@ Ionic 5 app to search for and display news items from an [API](https://newsapi.o
 
 ## Code Examples
 
-* Extract from `service.ts` file that gets data from the API.
+* Extract from `service.ts` that gets data from the API.
 
 ```typescript
 export class NewsService {
@@ -56,7 +56,17 @@ export class NewsService {
     return this.http.get(`${apiUrl}/${url}&apiKey=${apiKey}`);
   }
 }
+```
 
+* Extract from `news.page.ts` function to get API data with input url `'top-headlines?country=gb'`.
+
+```typescript
+ngOnInit() {
+  this.newsService.getData('top-headlines?country=gb').subscribe(data => {
+    console.log(data);
+    this.data = data;
+  });
+}
 ```
 
 ## Features
@@ -69,7 +79,7 @@ export class NewsService {
 
 * Status: Working. Can be improved.
 
-* To-do: Add *ngIf to only show section if API section !== null. Add footer on news detail page and/or back button.Add 'further info' button with web links to articles. Add function to format date shown. Set maximum size of news image. Add scroll bar. Observables. Consider search bar and language menu. Add link to email and linkedin buttons.
+* To-do: Add *ngIf to only show section if API section !=== null. Add footer on news detail page and/or back button.Add 'further info' button with web links to articles. Add function to format date shown. Set maximum size of news image. Add scroll bar. Observables. Consider search bar and language menu. Add link to email and linkedin buttons.
 
 ## Inspiration
 
