@@ -79,7 +79,7 @@ ngOnInit() {
 
 * Status: Working. Can be improved.
 
-* To-do: Add *ngIf to only show section if API section !=== null. Add footer on news detail page and/or back button.Add 'further info' button with web links to articles. Add function to format date shown. Set maximum size of news image. Add scroll bar. Observables. Consider search bar and language menu. Add link to email and linkedin buttons.
+* To-do: Add *ngIf to only show section if API section !=== null. Add 'further info' button with web links to articles. Set maximum size of news image. Add scroll bar. Observables. Consider search bar and language menu. Add link to email and linkedin buttons.
 
 ## Inspiration
 

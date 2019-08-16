@@ -1,16 +1,18 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <!-- <ion-title>{{article.title}}</ion-title> -->
-		<ion-title>NEWS IN DETAIL</ion-title>
+		<ion-buttons slot="start">
+			<ion-back-button defaultHref="/tabs/news"></ion-back-button>
+		</ion-buttons>
+    <ion-title>{{article.title}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content no-padding>
 	
-	<ion-card>
+	<ion-card no-padding>
     <ion-img [src]="article.urlToImage"></ion-img>
   
-		<ion-card-content>
+		<ion-card-content no-padding>
   		<ion-list>
     		<ion-item>
       		<ion-icon name="clipboard" slot="start"></ion-icon>
@@ -18,7 +20,7 @@
     		</ion-item>
 				<ion-item>
 					<ion-icon name="calendar" slot="start"></ion-icon>
-					Published: {{article.publishedAt}}
+					Published: {{article.publishedAt | date}}
 				</ion-item>
   		</ion-list>
 			<hr>
