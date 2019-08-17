@@ -14,20 +14,57 @@
   
 		<ion-card-content no-padding>
   		<ion-list>
-    		<ion-item>
-      		<ion-icon name="clipboard" slot="start"></ion-icon>
-      		Author: {{article.author}} of {{article.source.name}}
-    		</ion-item>
-				<ion-item>
+    		<ion-item *ngIf="article.author">
+      		<ion-icon name="create" slot="start"></ion-icon>
+					Author: {{article.author}}
+				</ion-item>
+
+				<ion-item *ngIf="article.source">
+					<ion-icon name="paper" slot="start"></ion-icon>
+					Source: {{article.source.name}}
+				</ion-item>
+
+				<ion-item *ngIf="article.publishedAt">
 					<ion-icon name="calendar" slot="start"></ion-icon>
 					Published: {{article.publishedAt | date}}
 				</ion-item>
+
   		</ion-list>
 			<hr>
-      <p>{{article.description}}</p>
+      <p *ngIf="article.description">{{article.description}}</p>
+			<p *ngIf="article.content">{{article.content}}</p>
+			
+		</ion-card-content>
 
-      <p>{{article.content}}</p>
-	  </ion-card-content>
+		<ion-grid>
+				<ion-row>
+					<ion-col col-4>
+						<button ion-button>
+							
+						</button>
+					</ion-col>
+					
+					<ion-col col-4>
+						<ion-button
+							item-center
+							ion-button fill="outline"
+							color="medium"
+							size="small"
+							href="{{article.url}}">
+							<ion-ripple-effect></ion-ripple-effect>
+								Read More &hellip;
+						</ion-button>
+					</ion-col>
+					
+					<ion-col col-4>
+						<button ion-button>
+							
+						</button>
+					</ion-col>
+				</ion-row>
+			</ion-grid>
 	</ion-card>
+
+
 </ion-content>
 

@@ -71,7 +71,7 @@ ngOnInit() {
 
 ## Features
 
-* Cicking on an item in the news page routes to a news detail page with more information.
+* Cicking on an item in the news page routes to a news detail page with more information. There is a link here to the original article.
 
 * API data service can be modified to search for news in other countries.
 
@@ -79,7 +79,7 @@ ngOnInit() {
 
 * Status: Working. Can be improved.
 
-* To-do: Add *ngIf to only show section if API section !=== null. Add 'further info' button with web links to articles. Set maximum size of news image. Add scroll bar. Observables. Consider search bar and language menu. Add link to email and linkedin buttons.
+* To-do: Add home page menu with categories. Set maximum size of news image. Add scroll bar. Observables. Consider search bar and language menu. Colour ionic and angular buttons correctly.  
 
 ## Inspiration
 
