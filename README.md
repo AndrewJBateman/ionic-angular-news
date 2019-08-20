@@ -71,15 +71,15 @@ ngOnInit() {
 
 ## Features
 
-* Cicking on an item in the news page routes to a news detail page with more information. There is a link here to the original article.
+* Cicking on an item in the news page routes to a news detail page with more information.
 
 * API data service can be modified to search for news in other countries.
 
 ## Status & To-do list
 
-* Status: Working. Can be improved.
+* Status: Working.
 
-* To-do: Add home page menu with categories. Set maximum size of news image. Add scroll bar. Observables. Consider search bar and language menu. Colour ionic and angular buttons correctly.  
+* To-do: This app could be improvemeved but it works and has taught me the news API basics. An improved news app will be created in a new repo: 'ionic-angular-news-app'.
 
 ## Inspiration
 

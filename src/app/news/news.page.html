@@ -1,53 +1,12 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title text-center>WORLD NEWS HEADLINES</ion-title>
+    <ion-title text-center>WORLD NEWS</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content >
   <ion-card *ngFor="let article of data?.articles" (click)="onGoToNewsDetail(article)">
-    <ion-img [src]="article.urlToImage" (click)="onGoToNewsDetail(article)"></ion-img>
+    <ion-img [src]="article.urlToImage"></ion-img>
     <ion-card-title text-wrap style="font-size: 1rem; color: #456f54;">{{article.title}}</ion-card-title>
   </ion-card>
-
-	<!-- <ion-card *ngFor="let article of data1?.articles" (click)="onGoToNewsDetail(article)">
-    <ion-img [src]="article.urlToImage" (click)="onGoToNewsDetail(article)"></ion-img>
-    <ion-card-header>
-      <ion-card-title>{{article.title}}</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p>{{article.description}}</p>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card *ngFor="let article of data2?.articles" (click)="onGoToNewsDetail(article)">
-    <ion-img [src]="article.urlToImage" (click)="onGoToNewsDetail(article)"></ion-img>
-    <ion-card-header>
-      <ion-card-title>{{article.title}}</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p>{{article.description}}</p>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card *ngFor="let article of data3?.articles" (click)="onGoToNewsDetail(article)">
-    <ion-img [src]="article.urlToImage" (click)="onGoToNewsDetail(article)"></ion-img>
-    <ion-card-header>
-      <ion-card-title>{{article.title}}</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p>{{article.description}}</p>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card *ngFor="let article of data4?.articles" (click)="onGoToNewsDetail(article)">
-    <ion-img [src]="article.urlToImage" (click)="onGoToNewsDetail(article)"></ion-img>
-    <ion-card-header>
-      <ion-card-title>{{article.title}}</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p>{{article.description}}</p>
-    </ion-card-content>
-  </ion-card> -->
-
 </ion-content>

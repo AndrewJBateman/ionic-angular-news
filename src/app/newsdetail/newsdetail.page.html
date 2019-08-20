@@ -8,12 +8,11 @@
 </ion-header>
 
 <ion-content no-padding>
-	
 	<ion-card no-padding>
     <ion-img [src]="article.urlToImage"></ion-img>
-  
 		<ion-card-content no-padding>
   		<ion-list>
+
     		<ion-item *ngIf="article.author">
       		<ion-icon name="create" slot="start"></ion-icon>
 					Author: {{article.author}}
@@ -32,39 +31,47 @@
   		</ion-list>
 			<hr>
       <p *ngIf="article.description">{{article.description}}</p>
-			<p *ngIf="article.content">{{article.content}}</p>
-			
+			<p *ngIf="article.content">{{article.content}}</p>	
 		</ion-card-content>
-
-		<ion-grid>
+		<ion-footer>
+	
+			<ion-grid>
 				<ion-row>
 					<ion-col col-4>
-						<button ion-button>
-							
-						</button>
+						<ion-button
+						ion-button fill="outline"
+						color="medium"
+						size="small"
+						>
+						<ion-ripple-effect></ion-ripple-effect>
+							Share
+						</ion-button>
 					</ion-col>
-					
+							
 					<ion-col col-4>
 						<ion-button
-							item-center
 							ion-button fill="outline"
 							color="medium"
 							size="small"
-							href="{{article.url}}">
-							<ion-ripple-effect></ion-ripple-effect>
-								Read More &hellip;
+						>
+						<ion-ripple-effect></ion-ripple-effect>
+							Read More
 						</ion-button>
 					</ion-col>
-					
+						
 					<ion-col col-4>
-						<button ion-button>
-							
-						</button>
+						<ion-button 						
+							ion-button fill="outline"
+							color="medium"
+							size="small"
+						>
+						<ion-ripple-effect></ion-ripple-effect>
+							Favourite
+						</ion-button>
 					</ion-col>
 				</ion-row>
 			</ion-grid>
+		</ion-footer>
 	</ion-card>
-
-
 </ion-content>
 

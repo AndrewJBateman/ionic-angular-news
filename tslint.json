@@ -63,7 +63,7 @@
       true,
       "ignore-params"
     ],
-    "no-misused-new": true,
+    "no-misused-new": false,
     "no-non-null-assertion": true,
     "no-redundant-jsdoc": true,
     "no-shadowed-variable": true,
