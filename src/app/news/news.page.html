@@ -4,9 +4,20 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
-  <ion-card *ngFor="let article of data?.articles" (click)="onGoToNewsDetail(article)">
-    <ion-img [src]="article.urlToImage"></ion-img>
-    <ion-card-title text-wrap style="font-size: 1rem; color: #456f54;">{{article.title}}</ion-card-title>
+<ion-content>
+  <ion-card
+    *ngFor="let article of data?.articles"
+    (click)="onGoToNewsDetail(article)"
+  >
+    <ion-img
+      [src]="article.urlToImage"
+      *ngIf="article.urlToImage !== null"
+    ></ion-img>
+    <ion-card-title
+      text-wrap
+      style="font-size: 1rem; color: #456f54"
+      *ngIf="article.urlToImage !== null"
+      >{{article.title}}</ion-card-title
+    >
   </ion-card>
 </ion-content>

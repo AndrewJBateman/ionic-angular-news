@@ -33,7 +33,7 @@
 ## :signal_strength: Technologies
 
 * [Ionic v5](https://ionicframework.com/)
-* [Ionic/angular v4](https://www.npmjs.com/package/@ionic/angular)
+* [Ionic/angular v5](https://www.npmjs.com/package/@ionic/angular)
 * [News REST API used to search for news articles](https://newsapi.org/) - only works in localhost. Paid subscription required if app is deployed
 
 ## :floppy_disk: Setup
@@ -50,8 +50,18 @@ export class NewsService {
 
   constructor(private http: HttpClient) {}
 
-  getData(url) {
-    return this.http.get(`${apiUrl}/${url}&apiKey=${apiKey}`);
+  getData(url: string): Observable<any> {
+    const articleData = this.http.get(`${apiUrl}/${url}&apiKey=${apiKey}`).pipe(
+      take(1),
+      catchError((err) => {
+        return throwError(
+          "There was a problem fetching data from the news API, error: ",
+          err
+        );
+      })
+    );
+    console.log("article Data: ", articleData);
+    return articleData;
   }
 }
 ```
@@ -75,12 +85,16 @@ ngOnInit() {
 ## :clipboard: Status & To-do list
 
 * Status: Working.
-* To-do: This app could be improvemeved but it works and has taught me the news API basics. An improved news app will be created in a new repo: 'ionic-angular-news-app'.
+* To-do: This app could be improved - add newsArticle interface and use Angular async in template instead of subscribe() for observables, for example. But it works and has taught me the news API basics. An improved news app will be created in a new repo: 'ionic-angular-news-app'.
 
 ## :clap: Inspiration
 
 * Project initially inspired by [Baljeet Singh´s Youtube video 'Creating News Application With Ionic 4 and Angular'](https://www.youtube.com/watch?v=NJ9C7iY9350) but much improved upon.
 
+## :file_folder: License
+
+* This project is licensed under the terms of the MIT license.
+
 ## :envelope: Contact
 
-* Repo created by [ABateman](https://www.andrewbateman.org) - feel free to contact me!
+* Repo created by [ABateman](https://github.com/AndrewJBateman), email: gomezbateman@yahoo.com
