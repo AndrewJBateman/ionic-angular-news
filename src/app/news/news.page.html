@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-card
+  <ion-card padding
     *ngFor="let article of data?.articles"
     (click)="onGoToNewsDetail(article)"
   >
@@ -15,7 +15,7 @@
     ></ion-img>
     <ion-card-title
       text-wrap
-      style="font-size: 1rem; color: #456f54"
+      style="font-size: 1rem; color: #456f54; margin: 8px;"
       *ngIf="article.urlToImage !== null"
       >{{article.title}}</ion-card-title
     >
