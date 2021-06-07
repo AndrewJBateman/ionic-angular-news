@@ -1,64 +1,50 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { TabsPage } from './tabs.page';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { TabsPage } from "./tabs.page";
 
 const routes: Routes = [
 	{
-		path: 'tabs',
+		path: "tabs",
 		component: TabsPage,
 		children: [
 			{
-				path: 'news',
-				children: [
-					{
-						path: '',
-						loadChildren: '../news/news.module#NewsPageModule'
-					}
-				]
+				path: "news",
+				loadChildren: () =>
+					import("../news/news.module").then((m) => m.NewsPageModule),
 			},
 			{
-				path: 'contact',
-				children: [
-					{
-						path: '',
-						loadChildren: '../contact/contact.module#ContactPageModule'
-					}
-				]
-			},
- 			{
-				path: 'about',
-				children: [
-					{
-						path: '',
-						loadChildren: '../about/about.module#AboutPageModule'
-					}
-				]
+				path: "contact",
+				loadChildren: () =>
+					import("../contact/contact.module").then((m) => m.ContactPageModule),
 			},
 			{
-				path: 'newsdetail',
-				children: [
-					{
-						path: '',
-						loadChildren: '../newsdetail/newsdetail.module#NewsDetailPageModule'
-					}
-				]
+				path: "about",
+				loadChildren: () =>
+					import("../about/about.module").then((m) => m.AboutPageModule),
 			},
 			{
-				path: '',
-				redirectTo: '/tabs/news',
-				pathMatch: 'full'
-			}
-		]
+				path: "newsdetail",
+				loadChildren: () =>
+					import("../newsdetail/newsdetail.module").then(
+						(m) => m.NewsDetailPageModule
+					)
+			},
+			{
+				path: "",
+				redirectTo: "/tabs/news",
+				pathMatch: "full",
+			},
+		],
 	},
 	{
-		path: '',
-		redirectTo: '/tabs/news',
-		pathMatch: 'full'
-	}
+		path: "",
+		redirectTo: "/tabs/news",
+		pathMatch: "full",
+	},
 ];
 
 @NgModule({
 	imports: [RouterModule.forChild(routes)],
-	exports: [RouterModule]
+	exports: [RouterModule],
 })
 export class TabsPageRoutingModule {}
