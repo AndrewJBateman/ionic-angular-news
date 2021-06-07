@@ -44,6 +44,7 @@
 
 ## :floppy_disk: Setup
 
+* Add News API key to `environment.ts` - free News API will not work if deployed
 * To start the server on _localhost://8100_ type: 'ionic serve'
 
 ## :computer: Code Examples
@@ -95,7 +96,7 @@ ngOnInit() {
 
 ## :clap: Inspiration
 
-* Project initially inspired by [Baljeet Singh´s Youtube video 'Creating News Application With Ionic 4 and Angular'](https://www.youtube.com/watch?v=NJ9C7iY9350) but much improved upon.
+* Project initially inspired by [Baljeet Singh´s Youtube video 'Creating News Application With Ionic 4 and Angular'](https://www.youtube.com/watch?v=NJ9C7iY9350) but much improved upon. I do not recommend this video now - there are much better & more recent Ionic tutorials on Youtube - Simon Grimm or Josh Morony for example.
 
 ## :file_folder: License
 
