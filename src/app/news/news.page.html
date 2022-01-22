@@ -6,7 +6,7 @@
 
 <ion-content>
   <ion-card padding
-    *ngFor="let article of data?.articles"
+    *ngFor="let article of data | async; let i = index"
     (click)="onGoToNewsDetail(article)"
   >
     <ion-img

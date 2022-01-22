@@ -2,8 +2,8 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 
 import { environment } from "../../environments/environment";
-import { Observable, throwError } from "rxjs";
-import { catchError, take } from "rxjs/operators";
+import { Observable } from "rxjs";
+import { map } from "rxjs/operators";
 
 const apiUrl = environment.API_URL;
 const apiKey = environment.API_KEY;
@@ -17,16 +17,12 @@ export class NewsService {
   constructor(private http: HttpClient) {}
 
   getData(url: string): Observable<any> {
-    const articleData = this.http.get(`${apiUrl}/${url}&apiKey=${apiKey}`).pipe(
-      take(1),
-      catchError((err) => {
-        return throwError(
-          "There was a problem fetching data from the news API, error: ",
-          err
-        );
-      })
-    );
-    console.log("article Data: ", articleData);
-    return articleData;
+    try {
+      return this.http
+        .get(`${apiUrl}/${url}&apiKey=${apiKey}`)
+        .pipe(map((res) => res["articles"]));
+    } catch (error) {
+      console.log("An error occured while fetching data: ", error);
+    }
   }
 }
