@@ -37,7 +37,7 @@
 ## :camera: Screenshots
 
 ![Ionic page](./img/news-page.png)
-![Ionic page](./img/news-detail.png)
+![Ionic page](./img/news-details.png)
 ![Ionic page](./img/contact.png)
 ![Ionic page](./img/about.png)
 
